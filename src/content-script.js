@@ -26,7 +26,7 @@ function openQuestsTab() {
 const INTERVALS = Object.freeze({
   questsTab: 60 * 1000,
   claim: 5 * 1000,
-  clickQuestActions: 5 * 1000,
+  clickQuestActions: 5 * 60 * 1000, // every 5 mins because opening tabs frequently can be a problem if Gears' website has broken quests (as they usually do - it's TC...)
   closeModal: 5 * 1000,
 });
 
