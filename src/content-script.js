@@ -3,8 +3,8 @@ function click(element) {
 }
 
 function claim() {
-  const claimQuestBtn = document.querySelector('.styles__ClaimReward-ga76s6-0');
-  click(claimQuestBtn);
+  const claimBtns = [...document.querySelectorAll('.styles__ClaimReward-ga76s6-0')];
+  claimBtns.forEach(click);
 }
 
 function clickQuestActions() {
