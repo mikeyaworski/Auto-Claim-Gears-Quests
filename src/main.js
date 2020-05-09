@@ -1,7 +1,3 @@
-function click(element) {
-  if (element) element.click();
-}
-
 function claim() {
   const claimBtns = [...document.querySelectorAll('.styles__ClaimReward-ga76s6-0')];
   claimBtns.forEach(click);
@@ -55,42 +51,3 @@ function vote() {
     }
   }, 1000);
 }
-
-const INTERVALS = Object.freeze({
-  questsTab: 60 * 1000,
-  claim: 5 * 1000,
-  clickQuestActions: 5 * 60 * 1000, // every 5 mins because opening tabs frequently can be a problem if Gears' website has broken quests (as they usually do - it's TC...)
-  retweet: 5 * 60 * 1000,
-  vote: 15 * 1000,
-  closeModal: 5 * 1000,
-});
-
-let questsInterval;
-let voteInterval;
-let retweetInterval;
-
-chrome.storage.sync.get(['autoClickQuests'], ({ autoClickQuests }) => {
-  if (autoClickQuests) {
-    questsInterval = setInterval(openQuestsTab, INTERVALS.questsTab);
-    retweetInterval = setInterval(retweetAnyTweet, INTERVALS.retweet);
-    voteInterval = setInterval(vote, INTERVALS.vote);
-  }
-});
-
-chrome.storage.onChanged.addListener((changes) => {
-  if (changes.autoClickQuests) {
-    if (changes.autoClickQuests.newValue) {
-      questsInterval = setInterval(openQuestsTab, INTERVALS.questsTab);
-      retweetInterval = setInterval(retweetAnyTweet, INTERVALS.retweet);
-      voteInterval = setInterval(vote, INTERVALS.vote);
-    } else {
-      clearInterval(questsInterval);
-      clearInterval(voteInterval);
-      clearInterval(retweetInterval);
-    }
-  }
-});
-
-setInterval(claim, INTERVALS.claim);
-setInterval(clickQuestActions, INTERVALS.clickQuestActions);
-setInterval(closeModal, INTERVALS.closeModal);

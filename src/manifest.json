@@ -10,7 +10,7 @@
   },
   "content_scripts": [{
     "matches": ["http://live.gearsofwar.com/*", "https://live.gearsofwar.com/*"],
-    "js": ["content-script.js"]
+    "js": ["constants.js", "chrome-utils.js", "helpers.js", "main.js", "intervals.js"]
   }],
   "browser_action": {
     "default_popup": "popup.html"

@@ -1,9 +1,14 @@
 body {
-  width: 140px;
-  height: 40px;
+  width: 320px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
 }
+
+label {
+  display: flex;
+  cursor: pointer;
+}
+
 .option-wrapper {
   display: flex;
 }
