@@ -1,5 +1,5 @@
 function claim() {
-  const claimBtns = [...document.querySelectorAll('.styles__ClaimReward-ga76s6-0')];
+  const claimBtns = [...document.querySelectorAll('.styles__ClaimReward-ga76s6-0, .styles__ClaimReward-sc-129ohce-0')];
   claimBtns.forEach(click);
 }
 
