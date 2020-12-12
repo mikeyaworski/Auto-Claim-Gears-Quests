@@ -19,7 +19,7 @@ function closeModal() {
 }
 
 function openQuestsTab() {
-  const tabBtn = document.querySelector('button[title=Quests]');
+  const tabBtn = document.querySelector('button[title*=Quests]');
   click(tabBtn);
 }
 
