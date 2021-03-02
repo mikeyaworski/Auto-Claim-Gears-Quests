@@ -14,7 +14,7 @@ function clickQuestActions() {
 }
 
 function closeModal() {
-  const closeModalBtn = document.querySelector('.icon-cancel-thin');
+  const closeModalBtn = document.querySelector('.icon-cancel-thin, [class^=CloseButton]');
   click(closeModalBtn);
 }
 
