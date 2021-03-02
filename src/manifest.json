@@ -1,7 +1,7 @@
 {
   "name": "Auto Claim Gears Quests",
   "description": "Open live.gearsofwar.com, sign in and then this will run in the background.",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "manifest_version": 2,
   "icons": {
     "16": "icon16.png",
