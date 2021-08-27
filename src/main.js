@@ -1,11 +1,18 @@
 function claim() {
-  const claimBtns = [...document.querySelectorAll('.styles__ClaimReward-ga76s6-0, .styles__ClaimReward-sc-129ohce-0')];
+  const claimBtns = Array.from(document.querySelectorAll('.styles__ClaimReward-ga76s6-0, .styles__ClaimReward-sc-129ohce-0'));
   claimBtns.forEach(click);
 }
 
 function clickQuestActions() {
+  const rewardButtons = Array.from(document.querySelectorAll('[class*="ClaimReward"'));
+  rewardButtons.forEach(rewardButton => {
+    click(rewardButton);
+  });
+
+  // Below is for an alternative document structure
+
   // all the quest actions which have not been done yet
-  const claimQuestActions = [...document.querySelectorAll('.quest-action-container')].filter(claimQuestAction => claimQuestAction.querySelector('i.icon-circle-empty'));
+  const claimQuestActions = Array.from(document.querySelectorAll('.quest-action-container')).filter(claimQuestAction => claimQuestAction.querySelector('i.icon-circle-empty'));
 
   claimQuestActions.forEach(claimQuestAction => {
     const actionLink = claimQuestAction.querySelector('a');
@@ -25,7 +32,7 @@ function openQuestsTab() {
 
 // there might be a really clean XPath expression for this...
 function retweetAnyTweet() {
-  const actionQuests = [...document.querySelectorAll('.quest-action-container')];
+  const actionQuests = Array.from(document.querySelectorAll('.quest-action-container'));
   const needsToRetweet = actionQuests.some(actionQuest => {
     const isComplete = !actionQuest.querySelector('.quest-action-icon.icon-circle-empty');
     if (isComplete) return false;
