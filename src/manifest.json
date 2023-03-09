@@ -3,6 +3,11 @@
   "description": "Open live.gearsofwar.com, sign in and then this will run in the background.",
   "version": "2.0.0",
   "manifest_version": 3,
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{419b3c3c-06b5-4a96-808e-82f5d7d663ef}"
+    }
+  },
   "icons": {
     "16": "icon16.png",
     "48": "icon48.png",
